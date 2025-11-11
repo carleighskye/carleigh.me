@@ -13,25 +13,29 @@
 <!--My CSS-->
     <link rel="stylesheet" type="text/css" href="CarleighPortfolio.css">
   </head>
-  <body>
+  <body class="no-scroll">
 <!--Begin content-->
+  <!-- Fixed logo so index matches other pages -->
+  <div class="Logo fixed-logo">
+    <a class="navbar-brand" href="index.html"><img src="img/logogreen.png" alt="Logo"></a>
+  </div>
 
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <!--Logo-->
- <img src="Asset 4@4x copy.png" alt="Logo" id="WelcomeLogo">
+<div class="container-fluid index-hero">
+  <div class="row g-0 align-items-stretch">
+    <!-- Left: hero image (background) on md+; full-width on small screens -->
+    <div class="col-12 col-md-7 hero-img rounded" role="img" aria-label="Photo of Carleigh smiling" style="background-image: url('img/welcomeimg.png');">
+      <!-- decorative background-image; hidden img for accessibility/fallback -->
+      <img src="img/welcomeimg.png" alt="" aria-hidden="true" style="display:none;">
     </div>
-    <!--EndLogo-->
-    <div class="col" id="WelcomeText">
-      <h3> Hi! I'm </h3>
-      <h1> Carleigh Carbonaro.</h1>
-      <p> Thanks for checking out my portfolio! Here you'll find a comprehensive collection of my favorite projects I've been a part of during my time at JMU and beyond. I hope you enjoy them as much as I do!</p> 
-      <button type="button" class="btn btn-primary btn-lg"><a href
-    ="myfavorites.html"> Check it out!</button>
-    </div>
-    <div class="row" id="WelcomePic">
-      <img src="Portfolio welcome image copy.png" alt="Photo of Carleigh smiling">
+
+    <!-- Right: hero text -- stacks underneath on small screens -->
+    <div class="col-12 col-md-5 d-flex align-items-center hero-text">
+      <div class="p-4 w-100">
+        <h3 class="mb-1">Hi! I'm</h3>
+        <h1 class="mb-3">Carleigh Carbonaro.</h1>
+        <p class="lead">Thanks for checking out my portfolio! Here you'll find a comprehensive collection of my favorite projects I've been a part of during my time at JMU and beyond. I hope you enjoy them as much as I do!</p>
+        <a class="btn btn-primary btn-lg" href="myfavorites.html" role="button">Check it out!</a>
+      </div>
     </div>
   </div>
 </div>

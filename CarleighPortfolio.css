@@ -14,6 +14,14 @@
 /* Use a slightly larger logo so it visually matches the navbar */
 .Logo img { max-height: 70px; height: auto; width: auto; display: block; }
 
+/* Fixed logo used on index to match navbar placement on other pages */
+.fixed-logo {
+	position: fixed;
+	top: 0.5rem; /* align with navbar top padding */
+	left: 1rem;  /* align with container left edge */
+	z-index: 1030; /* above page content but below modals */
+}
+
 .container-welcome {
     /* Make welcome area responsive and Bootstrap-friendly */
 }
@@ -51,3 +59,69 @@ h1 {}
 h3{}
 
 p{}
+
+/* Index page: prevent scrolling and position the hero content higher
+   Behavior: the hero text is prioritized to remain fully visible; the
+   image is cropped (object-fit:cover) when viewport is too small. */
+html, body { height: 100%; }
+.no-scroll { overflow: hidden; height: 100vh; }
+
+.index-hero {
+    min-height: 100vh;
+}
+/* Image column: fixed share on wide screens, crops via object-fit */
+.index-hero .hero-img {
+	/* Left column uses a background image to control cropping and focal point */
+	/* On md+ screens take majority of the horizontal space and reach the bottom */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 40%; /* face-focused */
+	min-height: 100vh;
+}
+
+/* If you prefer a different focal point, change background-position to 'center left' or similar */
+
+/* Text column: takes remaining space and uses responsive sizing so it fits
+   within the viewport; we use clamp() to reduce size on narrow viewports */
+.index-hero .hero-text {
+	display: flex;
+	align-items: center;
+	min-width: 0;
+	background: rgba(255,255,255,0.0);
+}
+.index-hero .hero-text.contrast {
+	background: rgba(255,255,255,0.85); /* optional higher-contrast background */
+	padding: 1rem;
+	border-radius: 6px;
+}
+.index-hero .hero-text .lead {
+	font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+}
+
+/* On narrow screens stack the image above the text and limit image height
+   so the text remains fully visible; the image will be cropped at the bottom */
+@media (max-width: 767.98px) {
+	.index-hero { min-height: 100vh; }
+	/* On small screens the background image becomes a block above the text */
+	.index-hero .hero-img { width: 100%; height: 45vh; background-position: center center; }
+	/* Overlay the bottom half of the image with the text */
+	.index-hero { position: relative; }
+	.index-hero .hero-text {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 50%; /* cover bottom half of the image */
+		padding: 1rem;
+		z-index: 3;
+		display: flex;
+		align-items: center;
+		background: linear-gradient(to top, rgba(255,255,255,0.96), rgba(255,255,255,0.6));
+		backdrop-filter: blur(4px);
+	}
+}
+
+/* On wide screens ensure the left background column fills the viewport height */
+@media (min-width: 768px) {
+	.index-hero .hero-img { height: 100vh; }
+}
