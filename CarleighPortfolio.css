@@ -64,7 +64,15 @@ p{}
    Behavior: the hero text is prioritized to remain fully visible; the
    image is cropped (object-fit:cover) when viewport is too small. */
 html, body { height: 100%; }
-.no-scroll { overflow: hidden; height: 100vh; }
+/* Legacy 'no-scroll' used on index to keep hero visible; convert to a flex
+	layout so the footer can still appear at the bottom while preserving
+	the non-scrolling hero feel. This lets us use Bootstrap `mt-auto` on the
+	footer to push it down. */
+.no-scroll { overflow: auto; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* When using the no-scroll body, allow the hero section to expand and
+	fill available vertical space so the footer sits at the bottom. */
+body.no-scroll .index-hero { flex: 1 1 auto; min-height: 0; }
 
 .index-hero {
     min-height: 100vh;
@@ -125,3 +133,10 @@ html, body { height: 100%; }
 @media (min-width: 768px) {
 	.index-hero .hero-img { height: 100vh; }
 }
+
+/* Footer link color override when using Bootstrap bg classes */
+.site-footer a { color: #fff; }
+.site-footer a:hover { color: #e9ecef; text-decoration: underline; }
+
+/* Helper: if you later use a fixed footer, add a body helper like
+   `.pb-footer { padding-bottom: 80px; }` to prevent content overlap. */
