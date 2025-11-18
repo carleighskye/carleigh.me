@@ -34,18 +34,14 @@
 /* Navbar background color */
 .navbar { background-color: #709fa5 !important; }
 
-#AboutMePic{
-	padding-top: 50px;
-	height: auto;
-	padding-left: 50px;
-	max-width: 100%;
-}
+/* About page image now uses Bootstrap classes; removed custom #AboutMePic rules */
 
 .bi {color: blue;}
 
 
 
-body { background-color: #f8ddc8; }
+/* Reset default body margin so full-bleed elements align with viewport edges */
+body { margin: 0; background-color: #f8ddc8; }
 
 a {color:white; 
 	text-decoration: none;}
@@ -138,5 +134,20 @@ body.no-scroll .index-hero { flex: 1 1 auto; min-height: 0; }
 .site-footer a { color: #fff; }
 .site-footer a:hover { color: #e9ecef; text-decoration: underline; }
 
-/* Helper: if you later use a fixed footer, add a body helper like
-   `.pb-footer { padding-bottom: 80px; }` to prevent content overlap. */
+/* Ensure .site-footer doesn't impose max-width or margins that prevent
+	the background from spanning the full viewport width. We use an inner
+	`.full-bleed-footer` element for the actual background so the content
+	remains aligned via the inner `.container`. */
+/* Footer layout is controlled with Bootstrap utility classes on the
+   footer element and an inner `.container-fluid` to align content. */
+
+/* Ensure the footer background spans the full viewport width even if
+	 the page content is centered. This makes the dark band truly edge-to-edge.
+	 Using 100vw and a negative offset compensates for centered containers. */
+.site-footer {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+	left: 0;
+	right: 0;
+}
