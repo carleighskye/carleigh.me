@@ -32,122 +32,51 @@
 }
 
 /* Navbar background color */
-.navbar { background-color: #709fa5 !important; }
+/* ==================================================
+   CarleighPortfolio.css — simplified and organized
+   Sections: Global | Index | About | Footer
+   Goal: keep CSS minimal; prefer Bootstrap utilities.
+   ================================================== */
 
-/* About page image now uses Bootstrap classes; removed custom #AboutMePic rules */
-
-.bi {color: blue;}
-
-
-
-/* Reset default body margin so full-bleed elements align with viewport edges */
+/* -------------------- Global -------------------- */
+html, body { height: 100%; }
 body { margin: 0; background-color: #f8ddc8; }
 
-a {color:white; 
-	text-decoration: none;}
+/* Text / links */
+a { color: white; text-decoration: none; }
 
-/* Make navbar links readable against the light navbar background */
+/* Logo / Navbar */
+.Logo { display: flex; align-items: center; }
+.Logo img { max-height: 70px; height: auto; width: auto; display: block; }
+.navbar { padding-top: 0.5rem; padding-bottom: 0.5rem; background-color: #709fa5 !important; }
 .navbar .nav-link { color: #111 !important; }
 .navbar .nav-link:hover { color: #000 !important; text-decoration: underline; }
+.fixed-logo { position: fixed; top: 0.5rem; left: 1rem; z-index: 1030; }
+.header { padding-top: 3rem; }
+.bi { color: #0d6efd; }
 
-h1 {}
-
-h3{}
-
-p{}
-
-/* Index page: prevent scrolling and position the hero content higher
-   Behavior: the hero text is prioritized to remain fully visible; the
-   image is cropped (object-fit:cover) when viewport is too small. */
-html, body { height: 100%; }
-/* Legacy 'no-scroll' used on index to keep hero visible; convert to a flex
-	layout so the footer can still appear at the bottom while preserving
-	the non-scrolling hero feel. This lets us use Bootstrap `mt-auto` on the
-	footer to push it down. */
+/* -------------------- Index page -------------------- */
+/* Keep the original index hero behavior but minimal rules here */
 .no-scroll { overflow: auto; min-height: 100vh; display: flex; flex-direction: column; }
-
-/* When using the no-scroll body, allow the hero section to expand and
-	fill available vertical space so the footer sits at the bottom. */
 body.no-scroll .index-hero { flex: 1 1 auto; min-height: 0; }
-
-.index-hero {
-    min-height: 100vh;
-}
-/* Image column: fixed share on wide screens, crops via object-fit */
-.index-hero .hero-img {
-	/* Left column uses a background image to control cropping and focal point */
-	/* On md+ screens take majority of the horizontal space and reach the bottom */
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center 40%; /* face-focused */
-	min-height: 100vh;
-}
-
-/* If you prefer a different focal point, change background-position to 'center left' or similar */
-
-/* Text column: takes remaining space and uses responsive sizing so it fits
-   within the viewport; we use clamp() to reduce size on narrow viewports */
-.index-hero .hero-text {
-	display: flex;
-	align-items: center;
-	min-width: 0;
-	background: rgba(255,255,255,0.0);
-}
-.index-hero .hero-text.contrast {
-	background: rgba(255,255,255,0.85); /* optional higher-contrast background */
-	padding: 1rem;
-	border-radius: 6px;
-}
-.index-hero .hero-text .lead {
-	font-size: clamp(0.95rem, 1.6vw, 1.15rem);
-}
-
-/* On narrow screens stack the image above the text and limit image height
-   so the text remains fully visible; the image will be cropped at the bottom */
+.index-hero { min-height: 100vh; }
+.index-hero .hero-img { background-size: cover; background-repeat: no-repeat; background-position: center 40%; min-height: 100vh; }
+.index-hero .hero-text { display: flex; align-items: center; }
 @media (max-width: 767.98px) {
-	.index-hero { min-height: 100vh; }
-	/* On small screens the background image becomes a block above the text */
-	.index-hero .hero-img { width: 100%; height: 45vh; background-position: center center; }
-	/* Overlay the bottom half of the image with the text */
-	.index-hero { position: relative; }
-	.index-hero .hero-text {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 50%; /* cover bottom half of the image */
-		padding: 1rem;
-		z-index: 3;
-		display: flex;
-		align-items: center;
-		background: linear-gradient(to top, rgba(255,255,255,0.96), rgba(255,255,255,0.6));
-		backdrop-filter: blur(4px);
-	}
+  .index-hero .hero-img { width: 100%; height: 45vh; background-position: center center; }
+  .index-hero { position: relative; }
+  .index-hero .hero-text {
+	position: absolute; bottom: 0; left: 0; right: 0; height: 50%; padding: 1rem;
+	z-index: 3; display: flex; align-items: center; background: linear-gradient(to top, rgba(255,255,255,0.96), rgba(255,255,255,0.6));
+  }
 }
+@media (min-width: 768px) { .index-hero .hero-img { height: 100vh; } }
 
-/* On wide screens ensure the left background column fills the viewport height */
-@media (min-width: 768px) {
-	.index-hero .hero-img { height: 100vh; }
-}
+/* -------------------- About page -------------------- */
+/* No page-specific rules here — layout controlled by Bootstrap classes. */
 
-/* Footer link color override when using Bootstrap bg classes */
+/* -------------------- Footer -------------------- */
 .site-footer a { color: #fff; }
 .site-footer a:hover { color: #e9ecef; text-decoration: underline; }
 
-/* Ensure .site-footer doesn't impose max-width or margins that prevent
-	the background from spanning the full viewport width. We use an inner
-	`.full-bleed-footer` element for the actual background so the content
-	remains aligned via the inner `.container`. */
-/* Footer layout is controlled with Bootstrap utility classes on the
-   footer element and an inner `.container-fluid` to align content. */
-
-/* Ensure the footer background spans the full viewport width even if
-	 the page content is centered. This makes the dark band truly edge-to-edge.
-	 Using 100vw and a negative offset compensates for centered containers. */
-.site-footer {
-	box-sizing: border-box;
-	width: 100%;
-	margin: 0;
-	left: 0;
-	right: 0;
-}
+/* End of file */
