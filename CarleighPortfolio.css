@@ -75,6 +75,23 @@ body.no-scroll .index-hero { flex: 1 1 auto; min-height: 0; }
 /* -------------------- About page -------------------- */
 /* No page-specific rules here — layout controlled by Bootstrap classes. */
 
+/* About page image: maintain aspect ratio, no distortion. On md+ match column height; on small screens be responsive. */
+.about-image-col { display: flex; }
+.about-image { display: block; max-width: 100%; width: auto; height: 100%; object-fit: cover; object-position: 50% 20%; transform: translateY(-6%); transition: transform 0.2s ease; }
+@media (max-width: 767.98px) {
+  .about-image { width: 100%; height: auto; object-fit: contain; margin-top: 0; transform: none; object-position: 50% 50%; }
+}
+
+/* About text padding: give slightly more left gutter than Bootstrap utilities alone */
+.about-text { padding-left: 3.5rem !important; }
+@media (min-width: 768px) {
+  .about-text { padding-left: 5rem !important; }
+}
+
+/* Remove bottom gap so footer sits directly after content */
+.header { padding-bottom: 0 !important; }
+.about-text p { margin-bottom: 0 !important; }
+
 /* -------------------- Footer -------------------- */
 .site-footer a { color: #fff; }
 .site-footer a:hover { color: #e9ecef; text-decoration: underline; }
