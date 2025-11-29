@@ -55,10 +55,20 @@ a { color: white; text-decoration: none; }
 .header { padding-top: 3rem; }
 .bi { color: #0d6efd; }
 
+/* -------------------- Card Images -------------------- */
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* -------------------- Index page -------------------- */
 /* Keep the original index hero behavior but minimal rules here */
 .no-scroll { overflow: auto; min-height: 100vh; display: flex; flex-direction: column; }
-body.no-scroll .index-hero { flex: 1 1 auto; min-height: 0; }
+body.no-scroll .index-hero { flex: 1 1 auto; }
+body.no-scroll .about-hero { flex: 1 1 auto; }
+body.no-scroll .site-footer { margin-top: auto; }
 .index-hero { min-height: 100vh; }
 .index-hero .hero-img { background-size: cover; background-repeat: no-repeat; background-position: center 40%; min-height: 100vh; }
 .index-hero .hero-text { display: flex; align-items: center; }
@@ -73,24 +83,32 @@ body.no-scroll .index-hero { flex: 1 1 auto; min-height: 0; }
 @media (min-width: 768px) { .index-hero .hero-img { height: 100vh; } }
 
 /* -------------------- About page -------------------- */
-/* No page-specific rules here — layout controlled by Bootstrap classes. */
-
-/* About page image: maintain aspect ratio, no distortion. On md+ match column height; on small screens be responsive. */
-.about-image-col { display: flex; }
-.about-image { display: block; max-width: 100%; width: auto; height: 100%; object-fit: cover; object-position: 50% 20%; transform: translateY(-6%); transition: transform 0.2s ease; }
-@media (max-width: 767.98px) {
-  .about-image { width: 100%; height: auto; object-fit: contain; margin-top: 0; transform: none; object-position: 50% 50%; }
-}
-
-/* About text padding: give slightly more left gutter than Bootstrap utilities alone */
+/* About page hero layout similar to index */
+.about-hero { min-height: 0; }
+.about-hero .about-img { background-size: cover; background-repeat: no-repeat; background-position: center 20%; min-height: 100vh; }
+.about-hero .about-text-container { display: flex; align-items: center; }
 .about-text { padding-left: 3.5rem !important; }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .about-text { padding-left: 5rem !important; }
 }
+@media (max-width: 1023.98px) {
+  .about-hero { position: relative; }
+  .about-hero .about-img { width: 100%; height: 60vh; background-position: center -50px; background-size: contain; }
+  .about-hero .about-text-container {
+    position: absolute; bottom: 0; left: 0; right: 0; min-height: 40vh; padding: 1rem;
+    z-index: 3; display: flex; align-items: flex-start; background: linear-gradient(to top, rgba(255,255,255,0.98), rgba(255,255,255,0.7));
+  }
+  .about-text { padding-left: 1rem !important; padding-right: 1rem !important; padding-bottom: 2rem !important; }
+  .about-text h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .about-text p { font-size: 0.85rem; line-height: 1.4; margin-bottom: 0; }
+}
 
-/* Remove bottom gap so footer sits directly after content */
-.header { padding-bottom: 0 !important; }
-.about-text p { margin-bottom: 0 !important; }
+/* Adjust for slightly larger phones (iPhone 12 Pro, 14 Pro, etc.) */
+@media (min-width: 390px) and (max-width: 1023.98px) {
+  .about-hero .about-img { height: 55vh; }
+  .about-hero .about-text-container { min-height: 45vh; }
+}
+}
 
 /* -------------------- Footer -------------------- */
 .site-footer a { color: #fff; }
