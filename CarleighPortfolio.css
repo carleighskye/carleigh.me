@@ -63,6 +63,13 @@ a { color: white; text-decoration: none; }
   object-position: center;
 }
 
+/* Special handling for logos that need to fit without cropping */
+.card-img-top.logo-contain {
+  object-fit: contain;
+  background-color: #f8f9fa;
+  padding: 1rem;
+}
+
 /* -------------------- Index page -------------------- */
 /* Keep the original index hero behavior but minimal rules here */
 .no-scroll { overflow: auto; min-height: 100vh; display: flex; flex-direction: column; }
