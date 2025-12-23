@@ -1,3 +1,26 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sarina&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+/* Local Glacial Indifference Font */
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('fonts/GlacialIndifference-Regular.woff2') format('woff2'),
+       url('fonts/GlacialIndifference-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('fonts/GlacialIndifference-Bold.woff2') format('woff2'),
+       url('fonts/GlacialIndifference-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Navbar and logo - use Bootstrap-friendly flow */
 .Logo {
 	position: relative;
@@ -39,21 +62,52 @@
    ================================================== */
 
 /* -------------------- Global -------------------- */
-html, body { height: 100%; }
-body { margin: 0; background-color: #f8ddc8; }
+html, body { 
+  height: 100%; 
+  font-family: 'Glacial Indifference', sans-serif;
+}
+body { 
+  margin: 0; 
+  background-color: #F5E8D1;
+  font-family: 'Glacial Indifference', sans-serif;
+}
 
 /* Text / links */
-a { color: white; text-decoration: none; }
+a { color: #B75C81; text-decoration: none; }
+
+* {
+  font-family: 'Glacial Indifference', sans-serif;
+}
 
 /* Logo / Navbar */
 .Logo { display: flex; align-items: center; }
 .Logo img { max-height: 70px; height: auto; width: auto; display: block; }
-.navbar { padding-top: 0.5rem; padding-bottom: 0.5rem; background-color: #709fa5 !important; }
-.navbar .nav-link { color: #111 !important; }
-.navbar .nav-link:hover { color: #000 !important; text-decoration: underline; }
+.navbar { padding-top: 0.5rem; padding-bottom: 0.5rem; background-color: #465118 !important; }
+.navbar .nav-link { color: #F5E8D1 !important; }
+.navbar .nav-link:hover { color: #DA8431 !important; font-weight: bold; }
 .fixed-logo { position: fixed; top: 0.5rem; left: 1rem; z-index: 1030; }
 .header { padding-top: 3rem; }
-.bi { color: #0d6efd; }
+.bi { color: #DA8431; }
+
+/* Text colors */
+h1 { 
+  color: #465118; 
+  font-family: 'Yellowtail', cursive;
+  font-size: 5.2em !important;
+}
+h2, h3 { 
+  color: #465118; 
+  font-family: 'Yellowtail', cursive;
+  font-size: 2.6em;
+}
+h4, h5, h6 { 
+  color: #465118; 
+  font-family: 'Sarina', cursive;
+}
+p { 
+  color: #465118;
+  font-family: 'Glacial Indifference', sans-serif;
+}
 
 /* -------------------- Card Images -------------------- */
 .card-img-top {
@@ -144,12 +198,139 @@ body.no-scroll .site-footer { margin-top: auto; }
   transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   animation: scrollBounce 1.6s infinite;
 }
-.scroll-indicator i { font-size: 1.6rem; color: #0d6efd; }
+.scroll-indicator i { font-size: 1.6rem; color: #DA8431; }
 .scroll-indicator:hover { opacity: 1; transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
 .scroll-indicator.hide { opacity: 0; pointer-events: none; animation: none; }
 @keyframes scrollBounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
+
+/* -------------------- Bootstrap Component Overrides -------------------- */
+/* Button styles using palette */
+.btn-primary {
+  background-color: #B75C81 !important;
+  border-color: #B75C81 !important;
+  color: #fff !important;
+}
+.btn-primary:hover {
+  background-color: #9a4a68 !important;
+  border-color: #9a4a68 !important;
+}
+.btn-primary:focus {
+  background-color: #9a4a68 !important;
+  border-color: #9a4a68 !important;
+  box-shadow: 0 0 0 0.25rem rgba(183, 92, 129, 0.25) !important;
+}
+
+.btn-secondary {
+  background-color: #DA8431 !important;
+  border-color: #DA8431 !important;
+  color: #fff !important;
+}
+.btn-secondary:hover {
+  background-color: #b86a27 !important;
+  border-color: #b86a27 !important;
+}
+.btn-secondary:focus {
+  background-color: #b86a27 !important;
+  border-color: #b86a27 !important;
+  box-shadow: 0 0 0 0.25rem rgba(218, 132, 49, 0.25) !important;
+}
+
+.btn-outline-primary {
+  color: #B75C81 !important;
+  border-color: #B75C81 !important;
+}
+.btn-outline-primary:hover {
+  background-color: #B75C81 !important;
+  border-color: #B75C81 !important;
+  color: #fff !important;
+}
+.btn-outline-primary:focus {
+  color: #B75C81 !important;
+  border-color: #B75C81 !important;
+  box-shadow: 0 0 0 0.25rem rgba(183, 92, 129, 0.25) !important;
+}
+
+.btn-outline-secondary {
+  color: #DA8431 !important;
+  border-color: #DA8431 !important;
+}
+.btn-outline-secondary:hover {
+  background-color: #DA8431 !important;
+  border-color: #DA8431 !important;
+  color: #fff !important;
+}
+.btn-outline-secondary:focus {
+  color: #DA8431 !important;
+  border-color: #DA8431 !important;
+  box-shadow: 0 0 0 0.25rem rgba(218, 132, 49, 0.25) !important;
+}
+
+/* Card styling */
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(70, 81, 24, 0.1);
+  background-color: #fff;
+}
+.card:hover {
+  box-shadow: 0 4px 16px rgba(70, 81, 24, 0.15);
+}
+.card-title {
+  color: #465118;
+  font-family: 'Glacial Indifference', sans-serif;
+  font-weight: bold;
+}
+.card-text {
+  color: #465118;
+}
+
+/* Form elements */
+.form-control {
+  border-color: #B75C81;
+  color: #465118;
+}
+.form-control:focus {
+  border-color: #DA8431;
+  box-shadow: 0 0 0 0.2rem rgba(218, 132, 49, 0.25);
+  color: #465118;
+}
+
+/* Modal styling */
+.modal-content {
+  background-color: #F5E8D1;
+  border: 1px solid #B75C81;
+}
+.modal-header {
+  background-color: #465118;
+  border-bottom: 2px solid #DA8431;
+}
+.modal-title {
+  color: #F5E8D1;
+  font-weight: 600;
+}
+.btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* Footer styling */
+.site-footer {
+  background-color: #465118 !important;
+}
+.site-footer p {
+  color: #F5E8D1 !important;
+}
+.site-footer a {
+  color: #C9D36A;
+}
+.site-footer a:hover {
+  color: #F5E8D1;
+  text-decoration: underline;
+}
+.site-footer .bi {
+  font-size: 2rem;
+}
+
 
 /* End of file */
