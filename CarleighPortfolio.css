@@ -298,9 +298,20 @@ body.no-scroll .site-footer { margin-top: auto; }
 }
 
 /* Modal styling */
+.modal.show {
+  display: flex !important;
+  align-items: center !important;
+}
+.modal-dialog {
+  margin: auto !important;
+}
 .modal-content {
   background-color: #F5E8D1;
   border: 1px solid #B75C81;
+  width: 100%;
+}
+.modal-body {
+  padding: 2rem;
 }
 .modal-header {
   background-color: #465118;
