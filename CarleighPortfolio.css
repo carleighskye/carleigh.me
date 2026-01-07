@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
+
 /* Local Glacial Indifference Font */
 @font-face {
   font-family: 'Glacial Indifference';
@@ -74,12 +75,12 @@
 /* -------------------- Global -------------------- */
 html, body { 
   height: 100%; 
-  font-family: 'Glacial Indifference', sans-serif;
+  font-family: 'Glacial Indifference', sans-serif !important;
 }
 body { 
   margin: 0; 
   background-color: #F5E8D1;
-  font-family: 'Glacial Indifference', sans-serif;
+  font-family: 'Glacial Indifference', sans-serif !important;
 }
 
 /* Text / links */
@@ -115,9 +116,14 @@ h4, h5, h6 {
   color: #465118; 
   font-family: 'Glacial Indifference', sans-serif;
 }
-p { 
+p, .lead, .card-text, .card-title {
   color: #465118;
-  font-family: 'Glacial Indifference', sans-serif;
+  font-family: 'Glacial Indifference', sans-serif !important;
+}
+
+/* Ensure nav and footer use Glacial Indifference explicitly */
+.navbar, .navbar .nav-link, .site-footer, .site-footer a {
+  font-family: 'Glacial Indifference', sans-serif !important;
 }
 
 /* -------------------- Card Images -------------------- */
