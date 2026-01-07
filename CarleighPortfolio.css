@@ -99,19 +99,20 @@ a { color: #B75C81; text-decoration: none; }
 .bi { color: #DA8431; }
 
 /* Text colors */
+/* Text colors */
 h1 { 
   color: #465118; 
-  font-family: 'Glacial Indifference', sans-serif;
+  font-family: 'Interlope', sans-serif;
   font-size: 5.2em !important;
 }
 h2, h3 { 
   color: #465118; 
-  font-family: 'Glacial Indifference', sans-serif;
+  font-family: 'Interlope', sans-serif;
   font-size: 2.6em;
 }
 h4, h5, h6 { 
   color: #465118; 
-  font-family: 'Glacial Indifference', sans-serif;
+  font-family: 'Interlope', sans-serif;
 }
 p { 
   color: #465118;
