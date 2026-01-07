@@ -1,5 +1,4 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Sarina&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 
 /* Local Glacial Indifference Font */
@@ -17,6 +16,16 @@
   src: url('fonts/GlacialIndifference-Bold.woff2') format('woff2'),
        url('fonts/GlacialIndifference-Bold.woff') format('woff');
   font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Local Interlope Font */
+@font-face {
+  font-family: 'Interlope';
+  src: url('fonts/Interlope-Regular.woff2?v=1') format('woff2'),
+       url('fonts/Interlope-Regular.woff?v=1') format('woff');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -92,17 +101,17 @@ a { color: #B75C81; text-decoration: none; }
 /* Text colors */
 h1 { 
   color: #465118; 
-  font-family: 'Yellowtail', cursive;
+  font-family: 'Glacial Indifference', sans-serif;
   font-size: 5.2em !important;
 }
 h2, h3 { 
   color: #465118; 
-  font-family: 'Yellowtail', cursive;
+  font-family: 'Glacial Indifference', sans-serif;
   font-size: 2.6em;
 }
 h4, h5, h6 { 
   color: #465118; 
-  font-family: 'Sarina', cursive;
+  font-family: 'Glacial Indifference', sans-serif;
 }
 p { 
   color: #465118;
