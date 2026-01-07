@@ -1,0 +1,15 @@
+{
+  "liveServer.settings.CustomBrowser": "Chrome",
+  "liveServer.settings.proxy": {
+    "enable": false,
+    "baseUri": "/",
+    "proxyUri": "http://127.0.0.1:5500"
+  },
+  "liveServer.settings.mimeTypes": {
+    ".woff2": "font/woff2",
+    ".woff": "font/woff",
+    ".ttf": "font/ttf",
+    ".eot": "application/vnd.ms-fontobject",
+    ".svg": "image/svg+xml"
+  }
+}

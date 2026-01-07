@@ -1,5 +1,6 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 /* Local Glacial Indifference Font */
 @font-face {
@@ -102,17 +103,17 @@ a { color: #B75C81; text-decoration: none; }
 /* Text colors */
 h1 { 
   color: #465118; 
-  font-family: 'Interlope', sans-serif;
+  font-family: 'Righteous', cursive;
   font-size: 5.2em !important;
 }
 h2, h3 { 
   color: #465118; 
-  font-family: 'Interlope', sans-serif;
+  font-family: 'Righteous', cursive;
   font-size: 2.6em;
 }
 h4, h5, h6 { 
   color: #465118; 
-  font-family: 'Interlope', sans-serif;
+  font-family: 'Glacial Indifference', sans-serif;
 }
 p { 
   color: #465118;
