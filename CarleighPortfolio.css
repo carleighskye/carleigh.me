@@ -464,4 +464,26 @@ body.no-scroll .site-footer { margin-top: auto; }
   .about-gallery .gallery-item img { height: 160px; }
 }
 
+/* Certifications: allow larger images and let them fill the figure height */
+.certifications-content .about-gallery .gallery-item {
+  height: 320px; /* increased row height to match design */
+}
+.certifications-content .about-gallery .gallery-item img {
+  width: auto !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block;
+  margin: 0 auto;
+  transition: transform .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+}
+
+.certifications-content .about-gallery .gallery-item img:hover,
+.certifications-content .about-gallery .gallery-item img:focus {
+  transform: scale(1.04);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  outline: none;
+}
+
 /* End of file */
