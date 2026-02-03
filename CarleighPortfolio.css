@@ -32,21 +32,6 @@
   font-display: swap;
 }
 
-/* Navbar and logo - use Bootstrap-friendly flow */
-.Logo {
-	position: relative;
-	display: flex;
-	align-items: center; /* vertically center the image in the navbar */
-}
-
-/* Let the navbar size itself; keep some vertical padding */
-.navbar { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-
-.navbar-nav { margin-left: 0; }
-
-/* Logo sizing: fit the navbar height while preserving aspect ratio */
-/* Use a slightly larger logo so it visually matches the navbar */
-.Logo img { max-height: 70px; height: auto; width: auto; display: block; }
 
 /* Fixed logo used on index to match navbar placement on other pages */
 .fixed-logo {
@@ -86,9 +71,6 @@ body {
 /* Text / links */
 a { color: #B75C81; text-decoration: none; }
 
-* {
-  font-family: 'Glacial Indifference', sans-serif;
-}
 
 /* Logo / Navbar */
 .Logo { display: flex; align-items: center; }
@@ -118,12 +100,11 @@ h4, h5, h6 {
 }
 p, .lead, .card-text, .card-title {
   color: #465118;
-  font-family: 'Glacial Indifference', sans-serif !important;
 }
 
 /* Ensure nav and footer use Glacial Indifference explicitly */
 .navbar, .navbar .nav-link, .site-footer, .site-footer a {
-  font-family: 'Glacial Indifference', sans-serif !important;
+  /* inherit global font from body */
 }
 
 /* -------------------- Card Images -------------------- */
