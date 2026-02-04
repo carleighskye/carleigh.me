@@ -503,6 +503,23 @@ body.no-scroll .site-footer { margin-top: auto; }
     object-fit: contain !important;
     background-color: transparent !important;
     padding: 0 !important;
+
+    /* Hover / focus transition for subtle interaction on desktop */
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    will-change: transform;
+  }
+
+  .certifications-content .about-gallery .gallery-item img:hover,
+  .certifications-content .about-gallery .gallery-item img:focus {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 24px rgba(70, 81, 24, 0.10);
+    cursor: pointer;
+    outline: none;
+  }
+
+  /* Visible focus ring for keyboard users */
+  .certifications-content .about-gallery .gallery-item img:focus-visible {
+    box-shadow: 0 0 0 4px rgba(183, 92, 129, 0.14);
   }
 }
 
