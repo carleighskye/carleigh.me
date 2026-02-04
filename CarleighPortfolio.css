@@ -238,8 +238,8 @@ body.no-scroll .site-footer { margin-top: auto; }
 
 /* -------------------- About page (mobile-only overrides moved from aboutme.html) -------------------- */
 @media (max-width: 575.98px) {
-  /* Crop hero image on small screens to show the top of the photo */
-  .about-img { background-position: top center !important; background-size: cover !important; height: 57vh !important; min-height: 42vh !important; }
+  /* Show more of the hero photo on small screens by centering and using contain */
+  .about-img { background-position: center center !important; background-size: contain !important; background-repeat: no-repeat !important; height: 65vh !important; min-height: 50vh !important; }
 
   /* Place about text below the image as a regular section */
   .about-hero .about-text-container { position: static !important; transform: none !important; min-height: auto !important; display: block !important; align-items: stretch !important; background: none !important; padding: 1rem !important; }
@@ -494,6 +494,18 @@ body.no-scroll .site-footer { margin-top: auto; }
   margin-top: 0.5rem;
   font-size: 0.95rem;
 }
+
+/* Certificates (portrait images) — don't crop on desktop; keep them contained and fully visible */
+@media (min-width: 576px) {
+  .certifications-content .about-gallery .gallery-item img {
+    height: auto !important;
+    max-height: 260px;
+    object-fit: contain !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+  }
+}
+
 @media (max-width: 576px) {
   .about-gallery .gallery-item img { height: 160px; }
 }
