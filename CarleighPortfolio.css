@@ -471,6 +471,29 @@ body.no-scroll .site-footer { margin-top: auto; }
 @media (max-width: 576px) {
   .about-gallery .gallery-item img { height: 160px; }
 }
+/* -------------------- Mobile overflow fixes - prevent horizontal scroll on phones -------------------- */
+@media (max-width: 575.98px) {
+  html, body { overflow-x: hidden !important; }
+  /* Ensure images and frames never exceed their containers */
+  img, iframe, .figure-img, .about-img, .about-gallery .gallery-item img { max-width: 100% !important; height: auto !important; box-sizing: border-box; }
+  /* Make Glenwood project images slightly smaller on phones */
+  /* Glenwood images: keep rotations but limit size on phones */
+  img[src*="glenwood/"] { max-width: 140px !important; height: auto !important; display: inline-block !important; margin: 0.5rem auto !important; }
+  /* Ensure the right-hand image column for Glenwood doesn't create its own scroll area and allows overflow for rotated images */
+  .col-md-4.d-flex.align-items-start.justify-content-center.flex-column { overflow: visible !important; }
+  /* Prevent rows with negative transforms from creating overflow */
+  .row { overflow-x: hidden !important; }
+  /* Reduce container side padding to avoid accidental overflow */
+  .container, .container-fluid { padding-left: 0.75rem !important; padding-right: 0.75rem !important; box-sizing: border-box; }
+
+  /* Glenwood: ensure right-hand image column is tall enough on phones so rotated images aren't clipped */
+  .col-md-4.d-flex.align-items-start.justify-content-center.flex-column { min-height: clamp(220px, 30vh, 360px) !important; padding-top: .5rem !important; }
+  img[src*="Asset-1-4x.png"] { max-width: 130px !important; display:block !important; margin: .4rem auto !important; }
+
+  /* Glenwood specific right column tweaks (page-specific classes) */
+  .glenwood-right { min-height: clamp(420px, 66vh, 820px) !important; padding-top: 1rem !important; padding-bottom: 1.25rem !important; }
+  .glenwood-asset { max-width: 150px !important; display:block !important; margin: .4rem auto !important; }
+  .glenwood-alpine { max-width: 160px !important; display:block !important; margin: .4rem auto !important; }
 
 /* Certifications: allow larger images and let them fill the figure height */
 .certifications-content .about-gallery .gallery-item {
