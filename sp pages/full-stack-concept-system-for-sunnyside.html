@@ -2,6 +2,14 @@
 <style>
   main h3 { text-align: left; }
 </style>
+<style>
+@media (max-width: 575.98px) {
+  .ratio { position: relative !important; display:block !important; aspect-ratio:16/9 !important; max-height: calc(100vh - 140px) !important; }
+  .ratio.app-preview { aspect-ratio: unset !important; height: min(65vh, 760px) !important; max-height: calc(100vh - 60px) !important; }
+  .ratio iframe { position: absolute !important; inset: 0 !important; width:100% !important; height:100% !important; border:0 !important; }
+  .back-to-projects { position: relative; z-index: 9999; }
+}
+</style>
 </head><body class="d-flex flex-column min-vh-100"><nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
   <div class="Logo"><a class="navbar-brand" href="../index.html"> <img src="../img/main/logoorange.png" alt="Logo"></a></div>
@@ -31,24 +39,24 @@
   <p>The title of this app is Nature Companion. The purpose of this project was to create an interactive app for residents of Sunnyside Communities to use when on their trails or exploring the grounds. This product is meant to foster curiosity and a place for residents to learn more about the nearby wildlife, as well as connect with other residents. This app is solving the problem of users not knowing what kinds of plants or animals they are looking at when on the trails or Sunnyside grounds.</p>
 
   <h3 class="mt-4 mb-3">App Preview</h3>
-  <div style="position: relative; width: 100%; max-width: 800px; height: 420px; margin: 0 auto 1rem; box-shadow: 0 2px 8px rgba(63,69,81,0.16); border-radius: 8px; overflow: hidden;">
-    <iframe loading="lazy" src="https://nature-companion.vercel.app" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0;" allowfullscreen></iframe>
-  </div>
+    <div class="ratio ratio-16x9 rounded app-preview" style="max-width:800px;margin:0 auto 1rem; box-shadow:0 2px 8px rgba(63,69,81,0.16); overflow:hidden;">
+      <iframe loading="lazy" src="https://nature-companion.vercel.app" title="Nature Companion app preview" style="border:0;" allowfullscreen></iframe>
+    </div>
 
   <h3 class="mt-4 mb-3" style="display:inline-flex;align-items:center;gap:.5rem;">PRD
     <a href="https://docs.google.com/document/d/15h17IKsblhsqtX0bwlxUodvc1NcZAVEJmLL_HGPyIkM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">Open Document</a>
   </h3>
   <p class="prototype-note" style="max-width:800px;margin:0 0 1rem;">To view this document I recommend opening in a new tab.</p>
-  <div style="max-width:800px;margin:0 auto 1rem;">
-    <iframe loading="lazy" src="https://docs.google.com/document/d/e/2PACX-1vRDB5Agkx6LfNXw7LQZxQ_skEb7Jbv-T8E7SuiS-FgBen8u9v8VjQz7Fv0g1xh83kR4aY_47LHpPVDv/pub?embedded=true" style="width:100%;height:480px;border:0;"></iframe>
+  <div class="ratio" style="max-width:800px;margin:0 auto 1rem; aspect-ratio:4/3; box-shadow:0 2px 8px rgba(63,69,81,0.16); border-radius:8px; overflow:hidden;">
+    <iframe loading="lazy" src="https://docs.google.com/document/d/e/2PACX-1vRDB5Agkx6LfNXw7LQZxQ_skEb7Jbv-T8E7SuiS-FgBen8u9v8VjQz7Fv0g1xh83kR4aY_47LHpPVDv/pub?embedded=true" title="PRD - Sunnyside" style="border:0;"></iframe>
   </div>
 
   <h3 class="mt-4 mb-3" style="display:inline-flex;align-items:center;gap:.5rem;">Full Concept Walkthrough
     <a href="https://docs.google.com/document/d/1jXsx9yluTJPQZj58VQiayRO7cUXnD8Viazr4JslxIkQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">Open Document</a>
   </h3>
   <p class="prototype-note" style="max-width:800px;margin:0 0 1rem;">To view this document I recommend opening in a new tab.</p>
-  <div style="max-width:800px;margin:0 auto 1rem;">
-    <iframe loading="lazy" src="https://docs.google.com/document/d/e/2PACX-1vQqCdQvZTDeSeeNKfaOFoet_medrMRJzCVDIvriFfqEEQ3Xm0O7xdRQNaKaxyCLVXjelmVkSk-S3FR9/pub?embedded=true" style="width:100%;height:480px;border:0;"></iframe>
+  <div class="ratio" style="max-width:800px;margin:0 auto 1rem; aspect-ratio:4/3; box-shadow:0 2px 8px rgba(63,69,81,0.16); border-radius:8px; overflow:hidden;">
+    <iframe loading="lazy" src="https://docs.google.com/document/d/e/2PACX-1vQqCdQvZTDeSeeNKfaOFoet_medrMRJzCVDIvriFfqEEQ3Xm0O7xdRQNaKaxyCLVXjelmVkSk-S3FR9/pub?embedded=true" title="Full Concept Walkthrough - Sunnyside" style="border:0;"></iframe>
   </div>
 
   <a href="../studentprojects.html" class="btn btn-secondary mt-3">Back to Student Projects</a>

@@ -210,6 +210,22 @@ body.no-scroll .site-footer { margin-top: auto; }
   .about-hero .about-text-container { min-height: 45vh; }
 }
 
+/* -------------------- About page (mobile-only overrides moved from aboutme.html) -------------------- */
+@media (max-width: 575.98px) {
+  /* Crop hero image on small screens to show the top of the photo */
+  .about-img { background-position: top center !important; background-size: cover !important; height: 57vh !important; min-height: 42vh !important; }
+
+  /* Place about text below the image as a regular section */
+  .about-hero .about-text-container { position: static !important; transform: none !important; min-height: auto !important; display: block !important; align-items: stretch !important; background: none !important; padding: 1rem !important; }
+  .about-text { background: transparent !important; margin: 0 !important; padding-top: 0.5rem !important; }
+
+  /* Hide decorative divider and keep normal stacking for following content */
+  .about-divider { display: none !important; }
+  .certifications-content { margin-top: 1.5rem !important; }
+
+  .about-hero { padding-bottom: 0 !important; min-height: auto !important; }
+}
+
 /* -------------------- Footer -------------------- */
 .site-footer a { color: #fff; }
 .site-footer a:hover { color: #e9ecef; text-decoration: underline; }
@@ -401,6 +417,7 @@ body.no-scroll .site-footer { margin-top: auto; }
 
 /* About divider used under the about hero to separate sections */
 .about-divider {
+  /* default: sit at the bottom of the hero using positioning for larger screens */
   position: absolute;
   left: 0;
   right: 0;
@@ -410,6 +427,10 @@ body.no-scroll .site-footer { margin-top: auto; }
   box-shadow: 0 -6px 12px rgba(0,0,0,0.08);
   display: block;
   z-index: 3;
+}
+@media (max-width: 576px) {
+  /* On small screens hide the divider (we'll keep the hero layout adjusted by JS) */
+  .about-divider { display: none !important; position: relative; bottom: auto; left: auto; right: auto; box-shadow: none; }
 }
 
 .more-about-content { margin-top: 40px; }
