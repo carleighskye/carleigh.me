@@ -166,7 +166,7 @@ body.no-scroll .site-footer { margin-top: auto; }
     margin-bottom: 0.6rem !important;
     overflow-wrap: break-word !important;
     word-break: break-word !important;
-    hyphens: auto !important;
+    hyphens: none !important;
   }
 }
 @media (min-width: 768px) { .index-hero .hero-img { height: 100vh; } }
@@ -251,6 +251,12 @@ body.no-scroll .site-footer { margin-top: auto; }
   background-color: #B75C81 !important;
   border-color: #B75C81 !important;
   color: #fff !important;
+}
+
+/* Ensure button text is not bold (especially when placed inside headings) */
+.btn {
+  font-weight: 400 !important;
+  font-family: 'Glacial Indifference', sans-serif !important;
 }
 .btn-primary:hover {
   background-color: #9a4a68 !important;
@@ -468,3 +474,92 @@ body.no-scroll .site-footer { margin-top: auto; }
 }
 
 /* End of file */
+
+/* Additional mobile tweaks for embedded project previews (Global Career Accelerator pages) */
+@media (max-width: 575.98px) {
+  /* Reduce logo size to preserve header space */
+  .Logo img { max-height: 52px; }
+
+  /* Make main page titles fit comfortably on small screens */
+  main h1, .container h1 { font-size: 1.4rem !important; line-height: 1.08 !important; }
+
+  /* Ensure any iframe previews scale down and remain usable on phones */
+  .ratio iframe, .container iframe, iframe {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 200px;
+  }
+
+  /* For bootstrap .ratio wrappers, allow the iframe to define its height if needed */
+  .ratio { aspect-ratio: auto; }
+}
+
+/* Prevent iframes from visually covering nearby buttons on small screens */
+@media (max-width: 575.98px) {
+  .ratio, .iframe-preview, iframe {
+    position: static !important;
+    z-index: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 180px;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Ensure 'Back to Student Projects' sits above iframes and remains clickable */
+  .back-to-projects {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* Wider small screens: ensure previews never exceed viewport height and back links remain on top */
+@media (max-width: 767.98px) {
+  .ratio, .iframe-preview, iframe {
+    position: static !important;
+    z-index: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: calc(100vh - 160px) !important;
+    margin-bottom: 0.75rem;
+    overflow: auto;
+  }
+
+  a[href$="studentprojects.html"], a[href$="../studentprojects.html"], a[href$="/studentprojects.html"] {
+    position: relative !important;
+    z-index: 3 !important;
+  }
+}
+
+/* Remove hyphenation site-wide on small screens to avoid split words */
+@media (max-width: 767.98px) {
+  html, body, p, li, h1, h2, h3, h4, h5, h6, .card-text, .card-title, .lead {
+    hyphens: none !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
+/* Target iframes that have inline absolute positioning (common in embeds) */
+@media (max-width: 767.98px) {
+  iframe[style*="position:absolute"], iframe[style*="position: absolute"] {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: calc(100vh - 140px) !important;
+    min-height: 180px !important;
+    display: block !important;
+    z-index: 0 !important;
+    background: transparent !important;
+  }
+
+  /* If a wrapper div used aspect-ratio, ensure it does not hide iframe content */
+  div[style*="aspect-ratio"], .ratio {
+    overflow: auto !important;
+    max-height: calc(100vh - 140px) !important;
+  }
+}

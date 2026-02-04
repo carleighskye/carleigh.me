@@ -14,6 +14,21 @@
     <link rel="stylesheet" type="text/css" href="CarleighPortfolio.css">
 <!-- Bootstrap Icons CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    /* Responsive filter/quick-link buttons */
+    .btn-group-responsive{display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center}
+    .btn-group-responsive .btn{flex:1 1 auto;min-width:120px;white-space:normal}
+    /* Project header: keep title and actions on one row on wide screens, stack on small */
+    .project-header{display:flex;justify-content:space-between;align-items:center;gap:0.5rem}
+    .project-header > h3{margin-bottom:0}
+    @media (max-width:575.98px){
+      .btn-group-responsive{flex-direction:column;align-items:stretch}
+      .btn-group-responsive .btn{width:100%}
+      .project-header{flex-direction:column;align-items:stretch}
+      .project-header .btn{margin-left:0;margin-top:0.5rem}
+      .project-header > div{display:flex;gap:0.5rem;justify-content:flex-end}
+    }
+  </style>
   </head>
   <body class="d-flex flex-column min-vh-100">
   <div class="scroll-indicator" aria-hidden="true"><i class="bi bi-chevron-down"></i></div>
@@ -51,7 +66,7 @@
 </div>
 <!-- Quick links to projects -->
 <div class="container text-center my-3">
-  <div class="btn-group" role="group" aria-label="Favorites quick links">
+  <div class="btn-group btn-group-responsive" role="group" aria-label="Favorites quick links">
     <a class="btn btn-outline-primary" href="#grant-expeditions">Grant Expeditions</a>
     <a class="btn btn-outline-primary" href="#csemsc">CSEMSC</a>
     <a class="btn btn-outline-primary" href="#glenwood">Glenwood Caverns</a>
@@ -62,7 +77,7 @@
 <div class="container"> <!---start of projects container -->
   <!-- Grant Expeditions block (new) -->
   <div class="row mt-4" id="grant-expeditions">
-    <div class="col-12 d-flex justify-content-between align-items-center">
+    <div class="col-12 d-flex justify-content-between align-items-center project-header">
       <h3 class="mb-0">Grant Expeditions</h3>
       <a class="btn btn-outline-primary" href="sp pages/grant-expeditions-capstone.html">More deliverables</a>
     </div>
@@ -75,7 +90,7 @@
   </div>
   <!-- CSEMSC block -->
   <div class="row mt-4">
-    <div class="col-12 d-flex justify-content-between align-items-center" id="csemsc">
+    <div class="col-12 d-flex justify-content-between align-items-center project-header" id="csemsc">
       <h3 class="mb-0">CSEMSC Brand Guide</h3>
       <a class="btn btn-outline-primary" href="sp pages/csemsc.html">More deliverables</a>
     </div>
@@ -90,7 +105,7 @@
 
   <!-- Glenwood Caverns block (new) -->
   <div class="row mt-4 mb-4" id="glenwood">
-    <div class="col-12 d-flex justify-content-between align-items-center">
+    <div class="col-12 d-flex justify-content-between align-items-center project-header">
       <h3 class="mb-0">Glenwood Caverns</h3>
       <a class="btn btn-outline-primary" href="sp pages/glenwood.html">More deliverables</a>
     </div>
@@ -103,7 +118,7 @@
   </div>
   <!-- New Favorite Project block (placeholder) -->
   <div class="row mt-4 mb-4" id="hydrosphere">
-    <div class="col-12 d-flex justify-content-between align-items-center">
+    <div class="col-12 d-flex justify-content-between align-items-center project-header">
       <h3 class="mb-0">Hydroshpere Sciences Logo & Branding</h3>
       <a class="btn btn-outline-primary" href="sp pages/hydrosphere-sciences.html">More deliverables</a>
     </div>
@@ -116,7 +131,7 @@
   </div>
     <!-- Another Favorite Project block (placeholder) -->
     <div class="row mt-4 mb-4" id="charity-water">
-      <div class="col-12 d-flex justify-content-between align-items-center">
+      <div class="col-12 d-flex justify-content-between align-items-center project-header">
         <h3 class="mb-0">charity: water Game</h3>
         <div>
           <a class="btn btn-outline-primary" href="sp pages/charitywater.html">More deliverables</a>

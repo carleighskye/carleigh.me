@@ -52,13 +52,28 @@
 
 <!-- Filter controls (by project attribute) -->
 <div class="container text-center my-3">
-  <div class="btn-group" role="group" aria-label="Project filters">
-    <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
-    <button type="button" class="btn btn-outline-primary" data-filter="brand-guides">Branding</button>
-    <button type="button" class="btn btn-outline-primary" data-filter="ui-ux">UI / UX</button>
-    <button type="button" class="btn btn-outline-primary" data-filter="web-development">Web Development</button>
-    <button type="button" class="btn btn-outline-primary" data-filter="social-media">Social Media</button>
-    <button type="button" class="btn btn-outline-primary" data-filter="visual-design">Visual Design</button>
+  <div class="d-flex justify-content-center">
+    <button class="btn btn-outline-secondary d-sm-none" type="button" data-bs-toggle="collapse" data-bs-target="#filtersCollapse" aria-expanded="false" aria-controls="filtersCollapse" aria-label="Toggle filters">
+      <i class="bi bi-list"></i> Filters
+    </button>
+    <div class="btn-group d-none d-sm-inline-flex ms-2" role="group" aria-label="Project filters" id="filtersInline">
+      <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="brand-guides">Branding</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="ui-ux">UI / UX</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="web-development">Web Development</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="social-media">Social Media</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="visual-design">Visual Design</button>
+    </div>
+  </div>
+  <div class="collapse mt-2 d-sm-none" id="filtersCollapse">
+    <div class="btn-group-vertical w-100" role="group" aria-label="Project filters collapsed" id="filtersCollapsed">
+      <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="brand-guides">Branding</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="ui-ux">UI / UX</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="web-development">Web Development</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="social-media">Social Media</button>
+      <button type="button" class="btn btn-outline-primary" data-filter="visual-design">Visual Design</button>
+    </div>
   </div>
 </div>
 
@@ -381,7 +396,10 @@
 
               function setActive(button){
                 buttons.forEach(b=>b.classList.remove('active'));
-                button.classList.add('active');
+                const filter = button.getAttribute('data-filter');
+                buttons.forEach(b=>{
+                  if(b.getAttribute('data-filter') === filter) b.classList.add('active');
+                });
               }
 
               function showFilter(filter){
