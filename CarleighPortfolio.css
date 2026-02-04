@@ -122,6 +122,32 @@ p, .lead, .card-text, .card-title {
   padding: 1rem;
 }
 
+/* -------------------- Student Projects (mobile image normalization) -------------------- */
+@media (max-width: 767.98px) {
+  /* Make all card images on the Student Projects page show more of the photo (less cropping) */
+  body.student-projects .card-img-top {
+    /* increase height to give images more room and use contain to reveal most of the image */
+    height: 320px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+    margin: 0 auto !important;
+    background-color: #fff !important;
+    padding: 0.4rem 0 !important;
+  }
+
+  /* Keep logo images contained and padded so they don't look cramped */
+  body.student-projects .card-img-top.logo-contain,
+  /* catch inline-logo cases (images that used inline padding / object-fit without .logo-contain class) */
+  body.student-projects .card-img-top[style*="padding"],
+  body.student-projects .card-img-top[style*="object-fit: contain"] {
+    object-fit: contain !important;
+    padding: 1rem !important;
+    height: 320px !important;
+    background-color: #f8f9fa !important;
+  }
+}
+
 /* -------------------- Index page -------------------- */
 /* Keep the original index hero behavior but minimal rules here */
 .no-scroll { overflow: auto; min-height: 100vh; display: flex; flex-direction: column; }
